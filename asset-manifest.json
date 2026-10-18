@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/autovault-garage/static/css/main.ab6774f5.css",
+    "main.js": "/autovault-garage/static/js/main.1cae743a.js",
+    "index.html": "/autovault-garage/index.html",
+    "main.ab6774f5.css.map": "/autovault-garage/static/css/main.ab6774f5.css.map",
+    "main.1cae743a.js.map": "/autovault-garage/static/js/main.1cae743a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab6774f5.css",
+    "static/js/main.1cae743a.js"
+  ]
+}
