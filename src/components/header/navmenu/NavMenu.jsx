@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import "./NavMenu.css";
+import {NavLink} from "react-router-dom";
+import {HashLink} from "react-router-hash-link";
 
 function NavMenu() {
-    const [activeLink, setActiveLink] = useState("#home");
-
     return (
         <nav className="av-nav-links">
-            <a href="#home" className={activeLink === "#home" ? "active" : ""} onClick={() => setActiveLink("#home")}>Home</a>
+            <ul>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/Performance">Performance</NavLink></li>
+                <li><NavLink to="/Listings">Listings</NavLink></li>
+                <li><NavLink to="/About">About</NavLink></li>
 
-            <a href="#performance" className={activeLink === "#performance" ? "active" : ""} onClick={() => setActiveLink("#performance")}>Performance</a>
 
-            <a href="#garage" className={activeLink === "#garage" ? "active" : ""} onClick={() => setActiveLink("#garage")}>Garage</a>
-
-            <a href="#about" className={activeLink === "#about" ? "active" : ""} onClick={() => setActiveLink("#about")}>About</a>
+            </ul>
         </nav>
     );
 }
