@@ -1,8 +1,17 @@
+import "./Footer.css";
+import {NavLink} from "react-router-dom";
+
 const Footer = () => {
     return (
-        <section id="main-footer">
-            <h3>Footer</h3>
-        </section>
+        <nav className="av-footer-links">
+            <ul>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/Performance">Performance</NavLink></li>
+                <li><NavLink to="/Garage">Garage</NavLink></li>
+                <li><NavLink to="/Listings">Listings</NavLink></li>
+                <li><NavLink to="/About">About</NavLink></li>
+            </ul>
+        </nav>
     );
 };
 

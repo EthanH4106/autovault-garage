@@ -1,10 +1,14 @@
-import Header from "../../components/header/Header";
+import Hero from "../../components/hero/Hero.jsx"
+import DragRacing from "../../components/dragRacing/DragRacing.jsx";
+import AboutPreview from "../../components/aboutPreview/AboutPreview.jsx";
 
 const Home = () => {
     return (
-        <section id="main-home">
-            <h3>Home</h3>
-        </section>
+        <main>
+            <Hero />
+            <DragRacing />
+            <AboutPreview />
+        </main>
     );
 };
 

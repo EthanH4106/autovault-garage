@@ -1,0 +1,139 @@
+/* Hero Section */
+#hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    height: 450px;
+    margin: 25px auto 40px;
+    padding: 10px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Hero Images */
+#hero > img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.3s ease,
+                filter 0.3s ease;
+}
+
+/* Dark Overlay for Text Visibility */
+#hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.55),
+        transparent 45%,
+        rgba(0, 0, 0, 0.35)
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Hero Welcome Content */
+.hero-content {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Welcome Heading */
+.hero-content h3 {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Garage Button Container */
+.button-link {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+/* Remove List Styling */
+.button-link ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.button-link li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Garage Button */
+.button-link a {
+    display: inline-block;
+    background-color: #008fd3;
+    color: #ffffff;
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Garage Button Hover */
+.button-link a:hover {
+    background-color: #00a7ed;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 143, 211, 0.5);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    #hero {
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #hero > img {
+        border-radius: 15px;
+    }
+
+    .hero-content {
+        top: 35px;
+        padding: 0 15px;
+    }
+
+    .hero-content h3 {
+        font-size: 26px;
+    }
+
+    .button-link {
+        bottom: 25px;
+    }
+
+    .button-link a {
+        font-size: 14px;
+        padding: 10px 25px;
+    }
+}

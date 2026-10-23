@@ -1,0 +1,34 @@
+.av-footer-links {
+    display: flex;
+    justify-content: center;
+    background-color: #202020;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.av-footer-links ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.av-footer-links li {
+    list-style: none;
+}
+
+.av-footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.av-footer-links a.active {
+    color: #008fd3;
+}
+
+.av-footer-links a:hover {
+    color: #00a7ed;
+}
