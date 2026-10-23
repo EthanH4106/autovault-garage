@@ -52,7 +52,6 @@
     border-radius: 20px;
     padding: 35px 25px;
     text-align: left;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Goal Card Hover */
@@ -60,6 +59,7 @@
     transform: translateY(-6px);
     border-color: #008fd3;
     box-shadow: 0 10px 30px rgba(0, 143, 211, 0.15);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Goal Card Heading */
@@ -81,16 +81,18 @@
 /* Quote Section */
 #quote {
     text-align: center;
-    background: linear-gradient(
-        135deg,
-        #202020,
-        #151515
-    );
-
+    background:#202020;
+    border: 1px solid #333333;
     border-radius: 25px;
     padding: 55px 30px;
     margin-top: 60px;
-    border-left: 4px solid #008fd3;
+}
+
+#quote:hover {
+    transform: translateY(-6px);
+    border-color: #008fd3;
+    box-shadow: 0 10px 30px rgba(0, 143, 211, 0.15);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #quote p {

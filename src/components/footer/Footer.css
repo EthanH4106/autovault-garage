@@ -2,12 +2,14 @@
     display: flex;
     justify-content: center;
     background-color: #202020;
+    border: 1px solid #333333;
     border-radius: 25px;
     padding: 10px 20px;
 }
 
 .av-footer-links:hover {
     transform: translateY(-5px);
+    border-color:#008fd3;
     box-shadow: 0 8px 25px rgba(0, 143, 211, 0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
