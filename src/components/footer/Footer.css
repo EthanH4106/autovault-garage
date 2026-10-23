@@ -6,6 +6,12 @@
     padding: 10px 20px;
 }
 
+.av-footer-links:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 143, 211, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .av-footer-links ul {
     display: flex;
     flex-direction: row;

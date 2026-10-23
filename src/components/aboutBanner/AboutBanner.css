@@ -1,0 +1,38 @@
+/* About Car Banner */
+#about-banner {
+    width: 100%;
+    margin: 35px auto 60px;
+}
+
+.about-car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Car Images */
+.about-car-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.about-car-grid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 143, 211, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-car-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-car-grid img {
+        height: 230px;
+    }
+}

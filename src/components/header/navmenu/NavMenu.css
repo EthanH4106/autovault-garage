@@ -13,6 +13,12 @@
     margin: 0;
 }
 
+.av-nav-links:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 143, 211, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .av-nav-links ul {
     display: flex;
     flex-direction: row;
