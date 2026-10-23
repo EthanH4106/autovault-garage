@@ -56,3 +56,20 @@
 .about-link a:hover {
     color: #008fd3;
 }
+
+@media (max-width: 900px) {
+    .about-content img {
+        width: 50%;
+        max-width: 400px;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .about-card {
+        background-color: #1b1b1b;
+        border-radius: 15px;
+        padding: 20px;
+        width: 60%;
+    }
+}

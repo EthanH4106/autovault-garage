@@ -1,4 +1,5 @@
 import "./AboutPreview.css";
+import carMeet from "./images/carmeet.avif"
 import {NavLink} from "react-router-dom";
 
 const AboutPreview = () => {
@@ -7,6 +8,8 @@ const AboutPreview = () => {
             <h2>What is Autovault?</h2>
 
             <div className="about-content">
+                <img src={carMeet} alt="carmeet"/>
+
                 <div className="about-card">
                     <h3>Explore, Compare, Discover</h3>
 

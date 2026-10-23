@@ -1,7 +1,7 @@
 const Listings = () => {
     return (
-        <section id="main-listings">
-            <h3>Listings</h3>
+        <section id="main-garage">
+            <h3>Garage</h3>
         </section>
     );
 };
