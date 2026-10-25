@@ -1,0 +1,78 @@
+/* Comparison Section */
+#comparison {
+    text-align: center;
+    padding: 45px 0;
+}
+
+#comparison h2 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* Comparison Layout */
+.comparison-cards {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 70px minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Individual Comparison Card */
+.comparison-card {
+    background-color: #202020;
+    border: 1px solid #353535;
+    border-radius: 20px;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.comparison-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.comparison-card h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 18px 10px;
+    margin: 0;
+}
+
+/* VS Text */
+.versus {
+    color: #008fd3;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.versus p {
+    margin: 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+    .comparison-cards {
+        grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .comparison-card img {
+        height: 140px;
+    }
+
+    .comparison-card h3 {
+        font-size: 13px;
+        padding: 12px 5px;
+    }
+
+    .versus {
+        font-size: 22px;
+    }
+}

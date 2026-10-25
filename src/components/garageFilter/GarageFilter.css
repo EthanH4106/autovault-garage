@@ -1,0 +1,50 @@
+#garage-controls {
+    margin: 35px 0;
+    text-align: center;
+}
+
+#garage-controls h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.filter-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-links button {
+    background-color: #202020;
+    border: 1px solid #353535;
+    border-radius: 20px;
+    padding: 10px 22px;
+
+    color: #cccccc;
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.filter-links button:hover {
+    color: #ffffff;
+    background-color: #303030;
+    transform: translateY(-2px);
+}
+
+.filter-links button.active {
+    background-color: #008fd3;
+    border-color: #008fd3;
+    color: #ffffff;
+}
+
+.filter-links button:focus-visible {
+    outline: 2px solid #29b6e6;
+    outline-offset: 3px;
+}

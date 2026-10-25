@@ -1,0 +1,85 @@
+/* Performance Page */
+#performance-page {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px 20px 70px;
+    box-sizing: border-box;
+}
+
+/* Performance Introduction */
+#performance-intro {
+    text-align: center;
+    padding: 45px 0 50px;
+}
+
+#performance-intro h2 {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+#performance-intro p {
+    color: #bbbbbb;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+/* Side-by-Side Statistics */
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Winner Section */
+#winner {
+    text-align: center;
+    background-color: #202020;
+    border: 1px solid #353535;
+    border-radius: 20px;
+    padding: 35px 20px;
+    margin-top: 20px;
+}
+
+#winner h2 {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+#winner p {
+    color: #008fd3;
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 900px) {
+    .performance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #performance-intro h2 {
+        font-size: 34px;
+    }
+    
+    #performance-page {
+        padding: 15px 10px 45px;
+    }
+
+    #performance-intro {
+        padding: 30px 0;
+    }
+
+    #performance-intro h2 {
+        font-size: 29px;
+    }
+
+    #performance-intro p {
+        font-size: 15px;
+    }
+}

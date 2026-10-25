@@ -1,0 +1,86 @@
+/* Car Statistics Card */
+.car-stats {
+    background-color: #202020;
+    border: 1px solid #353535;
+    border-radius: 20px;
+    padding: 25px;
+    min-width: 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-stats:hover {
+    border-color: #008fd3;
+    box-shadow: 0 8px 25px rgba(0, 143, 211, 0.12);
+}
+
+/* Car Selection */
+.car-select {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.car-select h3 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+
+/* Choose Car Button */
+.car-select a {
+    display: inline-block;
+    background-color: #008fd3;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px 25px;
+    border-radius: 20px;
+    font-size: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.car-select a:hover {
+    background-color: #00a7ed;
+    transform: translateY(-3px);
+}
+
+/* Statistics Grid */
+.car-stats .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* Individual Statistic */
+.car-stats .stat {
+    background-color: #2b2b2b;
+    border-radius: 12px;
+    padding: 18px 10px;
+    text-align: center;
+    min-width: 0;
+}
+
+.car-stats .stat h4 {
+    color: #aaaaaa;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0 0 12px;
+}
+
+.car-stats .stat p {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .car-stats {
+        padding: 18px;
+    }
+
+    .car-stats .stat {
+        padding: 15px 8px;
+    }
+}
