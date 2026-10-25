@@ -1,13 +1,32 @@
 {
   "files": {
-    "main.css": "/autovault-garage/static/css/main.ab6774f5.css",
-    "main.js": "/autovault-garage/static/js/main.1cae743a.js",
+    "main.css": "/autovault-garage/static/css/main.a2274153.css",
+    "main.js": "/autovault-garage/static/js/main.b00e263d.js",
+    "static/media/sport.jpg": "/autovault-garage/static/media/sport.363ec98dfb004e916a94.jpg",
+    "static/media/car2.jpg": "/autovault-garage/static/media/car2.a84eda0f6274721ef8f7.jpg",
+    "static/media/car6.jpg": "/autovault-garage/static/media/car6.19ae16ef449c26f97f6a.jpg",
+    "static/media/lambo-hero.jpg": "/autovault-garage/static/media/lambo-hero.c0ad3e8cdb37f027cb9f.jpg",
+    "static/media/super.jpg": "/autovault-garage/static/media/super.f777e82e75943eedce09.jpg",
+    "static/media/ferrari.jpg": "/autovault-garage/static/media/ferrari.facf79cc18c687732bed.jpg",
+    "static/media/truck.jpg": "/autovault-garage/static/media/truck.49afa72073fb0ad7d6fa.jpg",
+    "static/media/gt500pic.jpg": "/autovault-garage/static/media/gt500pic.cd2df088fc93bf8595e8.jpg",
+    "static/media/muscle.jpg": "/autovault-garage/static/media/muscle.24218763acaba657a1bf.jpg",
+    "static/media/car5.jpg": "/autovault-garage/static/media/car5.3b5874bd1ed45ef44671.jpg",
+    "static/media/gtr.jpg": "/autovault-garage/static/media/gtr.3b5874bd1ed45ef44671.jpg",
+    "static/media/car4.webp": "/autovault-garage/static/media/car4.547ddf32bd977b1017f1.webp",
+    "static/media/mustang.webp": "/autovault-garage/static/media/mustang.547ddf32bd977b1017f1.webp",
+    "static/media/carmeet.avif": "/autovault-garage/static/media/carmeet.9236e133d882254ac135.avif",
+    "static/media/car3.jpg": "/autovault-garage/static/media/car3.df51ae5589c75a4d8119.jpg",
+    "static/media/f150.jpg": "/autovault-garage/static/media/f150.df51ae5589c75a4d8119.jpg",
+    "static/media/suv.webp": "/autovault-garage/static/media/suv.7e0b388117b3c5218dea.webp",
+    "static/media/car1.webp": "/autovault-garage/static/media/car1.ab4f3762582e343b7e6b.webp",
+    "static/media/download.webp": "/autovault-garage/static/media/download.e146de6ef9871bb92214.webp",
     "index.html": "/autovault-garage/index.html",
-    "main.ab6774f5.css.map": "/autovault-garage/static/css/main.ab6774f5.css.map",
-    "main.1cae743a.js.map": "/autovault-garage/static/js/main.1cae743a.js.map"
+    "main.a2274153.css.map": "/autovault-garage/static/css/main.a2274153.css.map",
+    "main.b00e263d.js.map": "/autovault-garage/static/js/main.b00e263d.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab6774f5.css",
-    "static/js/main.1cae743a.js"
+    "static/css/main.a2274153.css",
+    "static/js/main.b00e263d.js"
   ]
 }
