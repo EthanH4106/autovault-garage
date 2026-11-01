@@ -74,6 +74,14 @@
     margin: 0;
 }
 
+/* Highlight Winning Statistics */
+.car-stats .stat p.winning-stat {
+    color: #00d084;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 208, 132, 0.25);
+    transition: color 0.3s ease;
+}
+
 /* Mobile */
 @media (max-width: 900px) {
     .car-stats {

@@ -10,7 +10,7 @@ import { getCarImage } from "../../utils/CarImages";
 // No external slideshow library used.
 
 // Select six cars for the Hero slideshow
-const selectedIds = [30, 29, 28, 25, 17, 22];
+const selectedIds = [40, 37, 34, 32, 18, 16];
 
 const slides = selectedIds
     .map((id) => cars.find((car) => car.id === id))

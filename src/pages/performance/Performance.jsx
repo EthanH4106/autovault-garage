@@ -44,11 +44,13 @@ const Performance = () => {
                 <CarStats
                     title="Your Car"
                     car={myCar}
+                    opponent={opponent}
                 />
 
                 <CarStats
                     title="Opponent's Car"
                     car={opponent}
+                    opponent={myCar}
                 />
             </div>
 
