@@ -1,6 +1,7 @@
 import "./Performance.css"
 import CarStats from "../../components/carStats/CarStats";
 import CarComparison from "../../components/carComparison/CarComparison";
+import CarChart from "../../components/carChart/CarChart";
 
 const Performance = () => {
     return (
@@ -25,6 +26,9 @@ const Performance = () => {
 
             {/* Head-to-Head Comparison */}
             <CarComparison />
+
+            {/* Performance Chart */}
+            <CarChart />
 
             {/* Winner Section */}
             <section id="winner">
