@@ -1,4 +1,5 @@
-.av-nav-links {
+/* Main Navigation */
+.main-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -8,42 +9,106 @@
     border: 1px solid #333333;
     border-radius: 25px;
     padding: 10px 20px;
-    list-style: none;
     margin: 0;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
 }
 
-.av-nav-links:hover {
+.main-nav:hover {
     transform: translateY(-5px);
     border-color: #008fd3;
     box-shadow: 0 8px 25px rgba(0, 143, 211, 0.35);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.av-nav-links ul {
+/* Navigation Links */
+.main-nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 15px;
-
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.av-nav-links li {
+.main-nav li {
     list-style: none;
 }
 
-.av-nav-links a {
+.main-nav a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-.av-nav-links a.active {
+.main-nav a.active {
     color: #008fd3;
 }
 
-.av-nav-links a:hover {
+.main-nav a:hover {
     color: #00a7ed;
+}
+
+#toggle-nav {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 0;
+    display: none;
+}
+
+.main-nav ul, .main-nav ul.hide-small, .main-nav ul.nav-open {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+/* Mobile Navigation */
+@media screen and (max-width: 900px) {
+    .main-nav {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 20px;
+    }
+
+    #toggle-nav {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .main-nav ul.hide-small {
+        display: none;
+    }
+
+    .main-nav ul.nav-open {
+        display: flex;
+    }
+
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 8px;
+    }
+
+    .main-nav a:hover {
+        background-color: #303030;
+        border-radius: 10px;
+    }
 }

@@ -13,24 +13,15 @@
     gap: 20px;
 }
 
-@media (max-width: 900px) {
-  .av-header {
-    padding-top: 25px;
-  }
+/* Mobile Header */
+@media screen and (max-width: 900px) {
+    .av-header {
+        padding: 25px 15px 20px;
+    }
 
-  .av-navbar {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-
-  .av-nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .av-nav-links a {
-    font-size: 16px;
-  }
+    .av-navbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
 }
