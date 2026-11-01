@@ -15,3 +15,10 @@ body {
   padding: 10%;
   flex-grow: 1;
 }
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

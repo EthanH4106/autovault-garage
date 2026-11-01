@@ -1,3 +1,8 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -52,16 +57,28 @@ const Garage = () => {
             />
 
             <section id="garage-grid">
-                {filteredCars.map((car) => (
-                    <GarageCard
-                        key={car.id}
-                        name={car.name}
-                        category={car.category}
-                        image={getCarImage(car)}
-                        onSelectMyCar={() => handleSelectMyCar(car)}
-                        onSelectOpponent={() => handleSelectOpponent(car)}
-                    />
-                ))}
+                <Swiper
+                    modules={[Navigation, Pagination]}
+                    key={selectedFilter}
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    navigation={true}
+                    pagination={{ clickable: true }}
+                    breakpoints={{640: {slidesPerView: 2}, 1024: {slidesPerView: 3}}}
+                    className="garage-swiper"
+                >
+                    {filteredCars.map((car) => (
+                        <SwiperSlide key={car.id}>
+                            <GarageCard
+                                name={car.name}
+                                category={car.category}
+                                image={getCarImage(car)}
+                                onSelectMyCar={() => handleSelectMyCar(car)}
+                                onSelectOpponent={() => handleSelectOpponent(car)}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </section>
 
             <div className="garage-compare-action">

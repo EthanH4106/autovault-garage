@@ -30,6 +30,13 @@ section h2 {
     width: 100%;   
 }
 
+.car-card img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
 .car-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 143, 211, 0.35);
@@ -45,14 +52,14 @@ section h2 {
 }
 
 .car-card h3 {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     color: #bbbbbb;
     margin: 15px 5px 5px;
 }
 
 .car-card p {
-    font-size: 12px;
+    font-size: 10px;
     color: #bbbbbb;
     margin: 0;
     padding: 0 10px 10px;
@@ -74,16 +81,29 @@ section h2 {
 }
 
 @media (max-width: 900px) {
+    #featured-cars {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+
+    #featured-cars .car-card {
+        width: 100%;
+        min-width: 0;
+    }
+
     .car-card img {
         width: 100%;
         height: 80%;
         object-fit: cover;
         display: block;
+        aspect-ratio: 16 / 9;
         filter: brightness(85%);
     }
 
     .car-card h3 {
-        font-size: 12px;
+        font-size: 15px;
         font-weight: 400;
         color: #bbbbbb;
         margin: 5px 5px 5px;

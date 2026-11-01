@@ -13,12 +13,19 @@
     background-color: #202020;
 }
 
-/* Hero Images */
-#hero .hero-image {
+/* Hero Slideshow */
+#hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center;
 }
 
 /* Dark Overlay */
@@ -173,7 +180,7 @@
 /* Mobile Responsiveness */
 @media screen and (max-width: 900px) {
     #hero {
-        height: 350px;
+        height: clamp(220px, 40vw, 450px);
         border-radius: 20px;
     }
 

@@ -1,6 +1,12 @@
 import "./GarageCard.css";
 
-const GarageCard = ({ name, category, image, onSelectMyCar, onSelectOpponent }) => {
+const GarageCard = ({
+    name,
+    category,
+    image,
+    onSelectMyCar,
+    onSelectOpponent
+}) => {
     return (
         <article className="garage-card">
             <img src={image} alt={name} />
