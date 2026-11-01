@@ -54,6 +54,28 @@
     padding: 20px 0;
 }
 
+.garage-compare-action {
+    display: flex;
+    justify-content: center;
+    margin: 45px 0;
+}
+
+.garage-compare-action button {
+    background-color: #008fd3;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 14px 35px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.garage-compare-action button:hover {
+    background-color: #00a7ed;
+    transform: translateY(-3px);
+}
+
 @media (max-width: 900px) {
     #garage-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));

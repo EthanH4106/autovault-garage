@@ -7,19 +7,22 @@ import Home from './pages/home/Home';
 import Performance from './pages/performance/Performance';
 import About from './pages/about/About';
 import Garage from './pages/garage/Garage';
+import { CarProvider } from './context/CarContext';
 
 const App = () => {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="performance" element={<Performance />} />
-          <Route path="about" element={<About />} />
-          <Route path="garage" element={<Garage />} />
-        </Route>
-      </Routes>
-    </HashRouter>
+    <CarProvider>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="performance" element={<Performance />} />
+            <Route path="about" element={<About />} />
+            <Route path="garage" element={<Garage />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+    </CarProvider>
   )
 };
 

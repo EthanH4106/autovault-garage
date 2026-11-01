@@ -2,32 +2,30 @@ import "./Hero.css";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-// Part 10: Custom JavaScript Slideshow
-// Built from scratch using React state and effects.
-// No slideshow libraries are used.
+import cars from "../../data/cars.json";
+import { getCarImage } from "../../utils/CarImages";
 
-const images = require.context(
-    "./images",
-    false,
-    /\.(png|jpe?g|svg|webp)$/i
-).keys().sort().map((key) =>
-    require.context(
-        "./images",
-        false,
-        /\.(png|jpe?g|svg|webp)$/i
-    )(key)
-);
+// Part 10: Custom JavaScript Slideshow
+// Images loaded from cars.json.
+// No external slideshow library used.
+
+// Select six cars for the Hero slideshow
+const selectedIds = [30, 29, 28, 25, 17, 22];
+
+const slides = selectedIds
+    .map((id) => cars.find((car) => car.id === id))
+    .filter(Boolean);
 
 const Hero = () => {
     const [slideIndex, setSlideIndex] = useState(0);
 
     // Automatically advance every 5 seconds
     useEffect(() => {
-        if (images.length <= 1) return;
+        if (slides.length <= 1) return;
 
         const interval = setInterval(() => {
             setSlideIndex((current) =>
-                (current + 1) % images.length
+                (current + 1) % slides.length
             );
         }, 5000);
 
@@ -37,29 +35,29 @@ const Hero = () => {
     // Move to next slide
     const slideForward = () => {
         setSlideIndex((current) =>
-            (current + 1) % images.length
+            (current + 1) % slides.length
         );
     };
 
     // Move to previous slide
     const slideBackward = () => {
         setSlideIndex((current) =>
-            (current - 1 + images.length) % images.length
+            (current - 1 + slides.length) % slides.length
         );
     };
 
     return (
         <section id="hero" aria-label="AutoVault slideshow">
-            {images.length > 0 && (
+            {slides.length > 0 && (
                 <img
-                    src={images[slideIndex]}
-                    alt={`Featured car ${slideIndex + 1}`}
+                    src={getCarImage(slides[slideIndex])}
+                    alt={slides[slideIndex].name}
                     className="hero-image"
                 />
             )}
 
             {/* Slideshow arrows */}
-            {images.length > 1 && (
+            {slides.length > 1 && (
                 <>
                     <button
                         id="prev-arrow"
@@ -94,11 +92,11 @@ const Hero = () => {
             </div>
 
             {/* Slide indicators */}
-            {images.length > 1 && (
+            {slides.length > 1 && (
                 <div className="slide-indicators">
-                    {images.map((image, index) => (
+                    {slides.map((car, index) => (
                         <button
-                            key={index}
+                            key={car.id}
                             type="button"
                             className={
                                 slideIndex === index
@@ -106,7 +104,7 @@ const Hero = () => {
                                     : "indicator"
                             }
                             onClick={() => setSlideIndex(index)}
-                            aria-label={`Go to slide ${index + 1}`}
+                            aria-label={`Go to slide ${index + 1}: ${car.name}`}
                             aria-current={
                                 slideIndex === index
                                     ? "true"

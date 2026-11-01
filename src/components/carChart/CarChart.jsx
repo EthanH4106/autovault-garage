@@ -1,4 +1,5 @@
 import "./CarChart.css";
+
 import {
     BarChart,
     Bar,
@@ -10,56 +11,60 @@ import {
     ResponsiveContainer
 } from "recharts";
 
-const CarChart = () => {
+const CarChart = ({ myCar, opponent }) => {
+    if (!myCar || !opponent) {
+        return (
+            <section id="car-chart">
+                <h2>Performance Comparison</h2>
+                <p>Select two cars to display the comparison chart.</p>
+            </section>
+        );
+    }
+
     const data = [
         {
             stat: "Horsepower",
-            mustang: 760,
-            supra: 382
+            myCar: myCar.horsepower,
+            opponent: opponent.horsepower
         },
         {
             stat: "Torque",
-            mustang: 625,
-            supra: 368
+            myCar: myCar.torque,
+            opponent: opponent.torque
         }
     ];
 
     return (
         <section id="car-chart">
             <h2>Performance Comparison</h2>
+
             <p>
-                Compare the horsepower and torque
-                of these two performance cars.
+                {myCar.name} vs {opponent.name}
             </p>
 
             <div className="chart-container">
-                <ResponsiveContainer width="100%" height={320}>
+                <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={data}>
                         <CartesianGrid
                             strokeDasharray="3 3"
                             stroke="#333333"
                         />
 
-                        <XAxis
-                            dataKey="stat"
-                            stroke="#ffffff"
-                        />
-
+                        <XAxis dataKey="stat" stroke="#ffffff" />
                         <YAxis stroke="#ffffff" />
 
                         <Tooltip />
-
                         <Legend />
 
                         <Bar
-                            dataKey="mustang"
-                            name="Mustang GT500"
+                            dataKey="myCar"
+                            name={myCar.name}
                             fill="#008fd3"
                         />
 
                         <Bar
-                            dataKey="supra"
-                            name="Toyota Supra"
+                            dataKey="opponent"
+                            name={opponent.name}
                             fill="#ff6b35"
                         />
                     </BarChart>

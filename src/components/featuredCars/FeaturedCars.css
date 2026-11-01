@@ -58,6 +58,21 @@ section h2 {
     padding: 0 10px 10px;
 }
 
+/* Featured Car Links */
+#featured-cars .car-card {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#featured-cars .car-card:hover {
+    text-decoration: none;
+}
+
+#featured-cars .car-card h3 {
+    color: #ffffff;
+}
+
 @media (max-width: 900px) {
     .car-card img {
         width: 100%;

@@ -1,64 +1,64 @@
 import { NavLink } from "react-router-dom";
 import "./CarStats.css";
 
-const CarStats = ({ title }) => {
+const CarStats = ({ title, car }) => {
+
+    const stats = [
+        { label: "Engine", value: car?.engine },
+        { label: "Drivetrain", value: car?.drivetrain },
+        {
+            label: "Weight",
+            value: car ? `${car.weight.toLocaleString()} lbs` : null
+        },
+        { label: "Transmission", value: car?.transmission },
+        {
+            label: "Horsepower",
+            value: car ? `${car.horsepower} hp` : null
+        },
+        {
+            label: "Torque",
+            value: car ? `${car.torque} lb-ft` : null
+        },
+        {
+            label: "0–60 MPH",
+            value: car ? `${car.zeroToSixty} sec` : null
+        },
+        {
+            label: "Top Speed",
+            value: car ? `${car.topSpeed} mph` : null
+        },
+        {
+            label: "Quarter Mile",
+            value: car ? `${car.quarterMile} sec` : null
+        }
+    ];
+
     return (
         <section className="car-stats">
             <div className="car-select">
-                <h3>{title}</h3>
+                <h3>{car ? car.name : title}</h3>
 
                 <NavLink to="/Garage">
-                    Choose Car
+                    {car ? "Change Car" : "Choose Car"}
                 </NavLink>
             </div>
 
             <div className="stats-grid">
-                <div className="stat">
-                    <h4>Engine</h4>
-                    <p>---</p>
-                </div>
-
-                <div className="stat">
-                    <h4>Drivetrain</h4>
-                    <p>---</p>
-                </div>
-
-                <div className="stat">
-                    <h4>Weight</h4>
-                    <p>---</p>
-                </div>
-
-                <div className="stat">
-                    <h4>Transmission</h4>
-                    <p>---</p>
-                </div>
+                {stats.slice(0, 4).map((stat) => (
+                    <div className="stat" key={stat.label}>
+                        <h4>{stat.label}</h4>
+                        <p>{stat.value ?? "---"}</p>
+                    </div>
+                ))}
             </div>
 
             <div className="stats-grid">
-                <div className="stat">
-                    <h4>Horsepower</h4>
-                    <p>---</p>
-                </div>
-
-                <div className="stat">
-                    <h4>Torque</h4>
-                    <p>---</p>
-                </div>
-
-                <div className="stat">
-                    <h4>0–60 MPH</h4>
-                    <p>---</p>
-                </div>
-
-                <div className="stat">
-                    <h4>Top Speed</h4>
-                    <p>---</p>
-                </div>
-
-                <div className="stat">
-                    <h4>Quarter Mile</h4>
-                    <p>---</p>
-                </div>
+                {stats.slice(4).map((stat) => (
+                    <div className="stat" key={stat.label}>
+                        <h4>{stat.label}</h4>
+                        <p>{stat.value ?? "---"}</p>
+                    </div>
+                ))}
             </div>
         </section>
     );

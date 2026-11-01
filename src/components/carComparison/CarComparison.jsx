@@ -1,27 +1,44 @@
 import "./CarComparison.css";
+import { getCarImage } from "../../utils/CarImages";
 
-import mustang from "./images/gt500pic.jpg";
-import supra from "./images/download.webp";
+const ComparisonCard = ({ car, placeholder }) => {
+    return (
+        <div className="comparison-card">
+            {car ? (
+                <img
+                    src={getCarImage(car)}
+                    alt={car.name}
+                />
+            ) : (
+                <div className="comparison-placeholder">
+                    <p>No Car Selected</p>
+                </div>
+            )}
 
-const CarComparison = () => {
+            <h3>{car ? car.name : placeholder}</h3>
+        </div>
+    );
+};
+
+const CarComparison = ({ myCar, opponent }) => {
     return (
         <section id="comparison">
             <h2>Head-to-Head Comparison</h2>
 
             <div className="comparison-cards">
-                <div className="comparison-card">
-                    <img src={mustang} alt="Ford Mustang GT500" />
-                    <h3>Ford Mustang Shelby GT500</h3>
-                </div>
+                <ComparisonCard
+                    car={myCar}
+                    placeholder="Choose Your Car"
+                />
 
                 <div className="versus">
                     <p>VS</p>
                 </div>
 
-                <div className="comparison-card">
-                    <img src={supra} alt="Toyota GR Supra" />
-                    <h3>Toyota GR Supra</h3>
-                </div>
+                <ComparisonCard
+                    car={opponent}
+                    placeholder="Choose Opponent"
+                />
             </div>
         </section>
     );

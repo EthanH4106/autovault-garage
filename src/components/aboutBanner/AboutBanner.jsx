@@ -1,15 +1,28 @@
 import "./AboutBanner.css";
-import gtr from "./images/gtr.jpg";
-import f150 from "./images/f150.jpg";
-import mustang from "./images/mustang.webp"
+import cars from "../../data/cars.json";
+import { getCarImage } from "../../utils/CarImages";
+
+// About Banner: Images pulled from cars.json
 
 const AboutBanner = () => {
+    // Select three specific cars using their JSON IDs
+    const selectedIds = [17, 7, 30];
+
+    const bannerCars = selectedIds
+        .map((id) => cars.find((car) => car.id === id))
+        .filter(Boolean);
+
     return (
         <section id="about-banner">
             <div id="about-cars" className="about-car-grid">
-                <img src={gtr} alt="GTR" />
-                <img src={mustang} alt="Ford Mustang" />
-                <img src={f150} alt="F-150" />
+                {bannerCars.map((car) => (
+                    <img
+                        key={car.id}
+                        src={getCarImage(car)}
+                        alt={car.name}
+                        loading="lazy"
+                    />
+                ))}
             </div>
         </section>
     );
