@@ -1,5 +1,6 @@
 import "./About.css"
 import AboutBanner from "../../components/aboutBanner/AboutBanner";
+import ContactForm from "../../components/contactForm/ContactForm";
 
 const About = () => {
     return (
@@ -53,6 +54,9 @@ const About = () => {
                 </p>
                 <span>— Carroll Shelby</span>
             </section>
+
+            {/* Contact Form */}
+            <ContactForm />
         </main>
     );
 };
