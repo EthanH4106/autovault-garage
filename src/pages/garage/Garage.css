@@ -114,6 +114,26 @@
     opacity: 1;
 }
 
+/* Server loading and error messages */
+
+.garage-message {
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 40px 20px;
+}
+
+.garage-error {
+    text-align: center;
+    color: #ff6b6b;
+    background: #2a1717;
+    border: 1px solid #a33;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 650px;
+}
+
 @media (max-width: 900px) {
     #garage-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
