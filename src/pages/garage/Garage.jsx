@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -6,47 +7,51 @@ import "swiper/css/pagination";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+
 import "./Garage.css";
 import GarageFilter from "../../components/garageFilter/GarageFilter";
 import GarageCard from "../../components/garageCard/GarageCard";
 import { useCars } from "../../context/CarContext";
-
-const API_URL = "https://autovault-backend-1.onrender.com";
+import { API_BASE_URL } from "../../config";
+import AddCar from "../../components/addCar/AddCar";
 
 const Garage = () => {
     const [cars, setCars] = useState([]);
     const [selectedFilter, setSelectedFilter] = useState("all");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const [showAddCar, setShowAddCar] = useState(false);
 
     const { setMyCar, setOpponent } = useCars();
     const navigate = useNavigate();
 
-    // Load vehicle data from the Render backend
+    // Load vehicles from the backend
     useEffect(() => {
         const controller = new AbortController();
 
         const fetchCars = async () => {
             try {
-                const response = await fetch(`${API_URL}/api/cars`, {
-                    signal: controller.signal
-                });
+                setLoading(true);
+                setError("");
 
-                if (!response.ok) {
-                    throw new Error("Unable to retrieve vehicle data.");
+                const response = await axios.get(
+                    `${API_BASE_URL}/api/cars`,
+                    { signal: controller.signal }
+                );
+
+                if (!Array.isArray(response.data)) {
+                    throw new Error("Invalid vehicle data");
                 }
 
-                const data = await response.json();
+                setCars(response.data);
 
-                if (!Array.isArray(data)) {
-                    throw new Error("Invalid vehicle data received.");
-                }
-
-                setCars(data);
             } catch (err) {
-                if (err.name !== "AbortError") {
-                    console.error("Error fetching cars:", err);
-                    setError("Unable to load vehicles. Please try again later.");
+                if (
+                    err.code !== "ERR_CANCELED" &&
+                    err.name !== "AbortError"
+                ) {
+                    console.error("Axios error:", err);
+                    setError("Unable to load vehicles.");
                 }
             } finally {
                 if (!controller.signal.aborted) {
@@ -60,7 +65,17 @@ const Garage = () => {
         return () => controller.abort();
     }, []);
 
-    // Filter the cars retrieved from the server
+    // Automatically update Garage after adding a car
+    const handleCarAdded = (newCar) => {
+        setCars((prevCars) => [...prevCars, newCar]);
+
+        // Show the newly added vehicle
+        setSelectedFilter("all");
+
+        toast.success("Vehicle added successfully!");
+    };
+
+    // Filter vehicles by category
     const filteredCars = cars.filter((car) =>
         selectedFilter === "all" ||
         car.category === selectedFilter
@@ -94,6 +109,17 @@ const Garage = () => {
                     </p>
                 </div>
             </section>
+
+            {/* Add Car Button */}
+            <div className="garage-add-action">
+                <button
+                    type="button"
+                    className="garage-add-button"
+                    onClick={() => setShowAddCar(true)}
+                >
+                    + Add New Vehicle
+                </button>
+            </div>
 
             <GarageFilter
                 selectedFilter={selectedFilter}
@@ -131,11 +157,13 @@ const Garage = () => {
                             {filteredCars.map((car) => (
                                 <SwiperSlide key={car.id}>
                                     <GarageCard
-                                        name={car.name}
-                                        category={car.category}
-                                        image={`${API_URL}${car.image}`}
-                                        onSelectMyCar={() => handleSelectMyCar(car)}
-                                        onSelectOpponent={() => handleSelectOpponent(car)}
+                                        car={car}
+                                        onSelectMyCar={() =>
+                                            handleSelectMyCar(car)
+                                        }
+                                        onSelectOpponent={() =>
+                                            handleSelectOpponent(car)
+                                        }
                                     />
                                 </SwiperSlide>
                             ))}
@@ -151,11 +179,19 @@ const Garage = () => {
             <div className="garage-compare-action">
                 <button
                     type="button"
-                    onClick={() => navigate("/Performance")}
+                    onClick={() => navigate("/performance")}
                 >
                     Compare Selected Cars
                 </button>
             </div>
+
+            {/* Add Car Modal */}
+            {showAddCar && (
+                <AddCar
+                    close_dialog={() => setShowAddCar(false)}
+                    onCarAdded={handleCarAdded}
+                />
+            )}
 
         </main>
     );

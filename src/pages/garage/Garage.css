@@ -115,7 +115,6 @@
 }
 
 /* Server loading and error messages */
-
 .garage-message {
     text-align: center;
     color: #ffffff;
@@ -132,6 +131,35 @@
     padding: 20px;
     margin: 30px auto;
     max-width: 650px;
+}
+
+/* Add Vehicle Button */
+.garage-add-action {
+    display: flex;
+    justify-content: center;
+    margin: 25px auto 30px;
+    padding: 0 20px;
+}
+
+.garage-add-button {
+    background: #008fd3;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.garage-add-button:hover {
+    background: #0077b3;
+    transform: translateY(-2px);
+}
+
+.garage-add-button:active {
+    transform: translateY(0);
 }
 
 @media (max-width: 900px) {
@@ -168,5 +196,10 @@
     .garage-swiper {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .garage-add-button {
+        width: 100%;
+        max-width: 350px;
     }
 }
