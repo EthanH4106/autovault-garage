@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/autovault-garage/static/css/main.374e36a4.css",
-    "main.js": "/autovault-garage/static/js/main.016972df.js",
+    "main.css": "/autovault-garage/static/css/main.5059fa3e.css",
+    "main.js": "/autovault-garage/static/js/main.8ddb9931.js",
     "static/media/carmeet.avif": "/autovault-garage/static/media/carmeet.9236e133d882254ac135.avif",
     "index.html": "/autovault-garage/index.html",
-    "main.374e36a4.css.map": "/autovault-garage/static/css/main.374e36a4.css.map",
-    "main.016972df.js.map": "/autovault-garage/static/js/main.016972df.js.map"
+    "main.5059fa3e.css.map": "/autovault-garage/static/css/main.5059fa3e.css.map",
+    "main.8ddb9931.js.map": "/autovault-garage/static/js/main.8ddb9931.js.map"
   },
   "entrypoints": [
-    "static/css/main.374e36a4.css",
-    "static/js/main.016972df.js"
+    "static/css/main.5059fa3e.css",
+    "static/js/main.8ddb9931.js"
   ]
 }
